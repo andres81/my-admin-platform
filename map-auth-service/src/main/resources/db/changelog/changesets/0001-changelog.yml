@@ -1,0 +1,79 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0001-1
+      author: André
+      changes:
+        - createTable:
+            tableName: dialogue_and_or_text
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name: version
+                  type: BIGINT
+              - column:
+                  name: dialogue_hash
+                  type: VARCHAR(512)
+        - createTable:
+            tableName: dialogue_and_or_text_line
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name: version
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(1024)
+              - column:
+                  name: type
+                  type: VARCHAR(1024)
+              - column:
+                  name: line_index
+                  type: INT
+              - column:
+                  name: line_id
+                  type: UUID
+              - column:
+                  name: dialogue_and_or_text_id
+                  type: UUID
+        - createTable:
+            tableName: line
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name: version
+                  type: BIGINT
+              - column:
+                  name: line
+                  type: TEXT
+              - column:
+                  name: line_sha_sum
+                  type: VARCHAR(512)
+        - addForeignKeyConstraint:
+            baseColumnNames: dialogue_and_or_text_id
+            baseTableName: dialogue_and_or_text_line
+            constraintName: fk_dialogue_and_or_text_line_dialogue_and_or_text
+            referencedColumnNames: id
+            referencedTableName: dialogue_and_or_text
+            validate: true
+        - addForeignKeyConstraint:
+            baseColumnNames: line_id
+            baseTableName: dialogue_and_or_text_line
+            constraintName: fk_dialogue_and_or_text_line_line
+            referencedColumnNames: id
+            referencedTableName: line
+            validate: true
