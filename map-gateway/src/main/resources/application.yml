@@ -1,0 +1,28 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${issuer-uri}
+  cloud:
+    gateway:
+      routes:
+        - id: map-user-daot
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/map-user-daot/**
+          filters:
+            - name: UserInternalAuthentication
+
+user:
+  authentication:
+    url: "http://localhost:8081/api/user/jwk"
+
+auth0:
+  audience: my-admin-platform.com
+
+
+logging:
+  level:
+    org.springframework: INFO
+    reactor.netty.http.client: INFO

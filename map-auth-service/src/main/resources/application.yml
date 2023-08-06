@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${issuer-uri}
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+auth0:
+  audience: my-admin-platform.com
