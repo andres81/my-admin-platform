@@ -19,6 +19,7 @@ package eu.andreschepers.springoauth2gateway.adapter.out.client;
 import eu.andreschepers.springoauth2gateway.application.port.out.IUserAuthPort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;

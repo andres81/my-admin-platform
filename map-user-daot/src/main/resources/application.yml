@@ -1,2 +1,12 @@
 server:
   port: 8082
+
+app:
+  security:
+    config:
+      jwk-url: http://localhost:8081/api/jwk
+
+logging:
+  level:
+    org.springframework: INFO
+    reactor.netty.http.client: INFO

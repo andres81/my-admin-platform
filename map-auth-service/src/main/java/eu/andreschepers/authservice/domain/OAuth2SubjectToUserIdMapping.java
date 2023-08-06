@@ -24,10 +24,10 @@ import java.util.UUID;
 public class OAuth2SubjectToUserIdMapping {
 
     private final String oAuth2JWTSubject;
-    private final UUID userId;
+    private final UUID internalUserIdSubject;
 
-    public OAuth2SubjectToUserIdMapping(String oAuth2JWTSubject, UUID userId) {
+    public OAuth2SubjectToUserIdMapping(String oAuth2JWTSubject, UUID internalUserIdSubject) {
         this.oAuth2JWTSubject = oAuth2JWTSubject;
-        this.userId = userId;
+        this.internalUserIdSubject = internalUserIdSubject;
     }
 }

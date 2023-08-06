@@ -14,28 +14,8 @@
  *    limitations under the License.
  */
 
-package eu.andreschepers.authservice.gateway.database.jpaentities;
+package eu.andreschepers.authservice.application.port.in;
 
-
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.UUID;
-
-@Getter
-@Setter
-@Entity
-@Table(name = "oauth2_subject_to_userid_mapping")
-public class OAuth2SubjectToUserIdMappingJpaEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-
-    @Column(name="oauth2_jwt_subject")
-    private String oauth2JwtSubject;
-
-    @Column(name="user_id")
-    private UUID userId;
+public interface ICreateUserIdBearerTokenUseCase {
+    String createBearerToken(String subject);
 }

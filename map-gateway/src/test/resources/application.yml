@@ -1,0 +1,3 @@
+user:
+  authentication:
+    url: user.authentication.url

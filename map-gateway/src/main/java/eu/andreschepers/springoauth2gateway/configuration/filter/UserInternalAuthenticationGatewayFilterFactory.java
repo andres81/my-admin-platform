@@ -42,10 +42,10 @@ public class UserInternalAuthenticationGatewayFilterFactory extends
             var request = exchange.getRequest();
             return userAuthPort.userAuthentication(getAuthorizationHeader(request))
                 .map(
-                    authHeaderValue -> {
+                    bearerToken -> {
                         exchange.getRequest()
                             .mutate()
-                            .headers(h -> h.setBearerAuth(authHeaderValue))
+                            .headers(h -> h.setBearerAuth(bearerToken))
                             .build();
                         return exchange;
                     }

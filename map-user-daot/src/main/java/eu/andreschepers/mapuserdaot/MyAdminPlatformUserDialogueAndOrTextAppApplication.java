@@ -14,7 +14,19 @@
  *    limitations under the License.
  */
 
-package eu.andreschepers.authservice.usecase.inputport;
+package eu.andreschepers.mapuserdaot;
 
-public interface ICreateUserIdTokenUseCase {
+import eu.andreschepers.mapuserdaot.configuration.security.SecurityConfigProperties;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
+@SpringBootApplication
+@EnableConfigurationProperties(SecurityConfigProperties.class)
+public class MyAdminPlatformUserDialogueAndOrTextAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MyAdminPlatformUserDialogueAndOrTextAppApplication.class, args);
+	}
+
 }

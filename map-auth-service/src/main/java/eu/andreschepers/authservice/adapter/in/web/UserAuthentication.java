@@ -14,9 +14,9 @@
  *    limitations under the License.
  */
 
-package eu.andreschepers.authservice.controller;
+package eu.andreschepers.authservice.adapter.in.web;
 
-import com.nimbusds.jose.JOSEException;
+import eu.andreschepers.authservice.application.port.in.ICreateUserIdBearerTokenUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -25,32 +25,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
 public class UserAuthentication {
 
+    private final ICreateUserIdBearerTokenUseCase createUserIdTokenUseCase;
+
     @GetMapping("/authenticate")
     public String authenticateUser(@AuthenticationPrincipal Jwt userJwt) {
-        return "BearerToken";
-    }
-
-    @GetMapping("/jwk")
-    public String getJwk() throws JOSEException, IOException {
-
-        var is = this.getClass().getResourceAsStream("/certificate.crt");
-        String text = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-
-//        var key = nimbusDSUtil.rsaKeyFromX509Certificate(text);
-//
-//        var publicJwk = key.toPublicJWK();
-//
-//        return Map.of("keys", List.of(publicJwk.toJSONObject()));
-
-        return "BearerToken";
+        return createUserIdTokenUseCase.createBearerToken(userJwt.getSubject());
     }
 }

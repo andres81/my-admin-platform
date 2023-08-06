@@ -19,7 +19,7 @@ const Home = () => {
 
 const callApi = async () => {
       const token = await getAccessTokenSilently();
-      const responseData = await getData(`${apiOrigin}/api/user/jwk`, token);
+      const responseData = await getData(`${apiOrigin}/api/map-user-daot/test`, token);
       console.info('received responseData: ', responseData);
       setState({
         ...state,
@@ -36,8 +36,7 @@ const callApi = async () => {
         </button>
         <div id="server-response">
             {state.error}
-
-           {JSON.stringify(state.apiMessage, null, 2)}
+            JSON.stringify(state.apiMessage, null, 2)
         </div>
     </div>
   );

@@ -6,7 +6,6 @@ import { Container } from "reactstrap";
 import { createBrowserHistory } from "history";
 
 import Home from "./views/Home"
-import Profile from "./views/Profile"
 
 import NavBar from './components/NavBar'
 
@@ -27,7 +26,7 @@ function App() {
         <Container className="flex-grow-1 mt-5">
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/profile" component={Profile} />
+            {/*<Route path="/profile" component={Profile} />*/}
             {/*<Route path="/external-api" component={ExternalApi} />*/}
           </Switch>
         </Container>

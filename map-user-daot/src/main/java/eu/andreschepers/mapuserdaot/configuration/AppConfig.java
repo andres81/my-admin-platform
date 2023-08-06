@@ -14,16 +14,9 @@
  *    limitations under the License.
  */
 
-package eu.andreschepers.mapuserdaot;
+package eu.andreschepers.mapuserdaot.configuration;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
-public class MyAdminPlatformUserDiagramAndOrTextAppApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(MyAdminPlatformUserDiagramAndOrTextAppApplication.class, args);
-	}
-
-}
+@Configuration
+public class AppConfig {}

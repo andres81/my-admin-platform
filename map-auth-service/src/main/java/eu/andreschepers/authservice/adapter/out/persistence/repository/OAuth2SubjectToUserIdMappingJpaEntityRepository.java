@@ -14,25 +14,15 @@
  *    limitations under the License.
  */
 
-package eu.andreschepers.authservice.common;
+package eu.andreschepers.authservice.adapter.out.persistence.repository;
 
-import com.nimbusds.jose.JOSEException;
-import com.nimbusds.jose.jwk.RSAKey;
-import com.nimbusds.jose.util.X509CertUtils;
-import org.springframework.stereotype.Component;
+import eu.andreschepers.authservice.adapter.out.persistence.jpaentities.OAuth2SubjectToUserIdMappingJpaEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.security.cert.X509Certificate;
+import java.util.Optional;
+import java.util.UUID;
 
-@Component
-public class NimbusDSUtil {
+public interface OAuth2SubjectToUserIdMappingJpaEntityRepository extends JpaRepository<OAuth2SubjectToUserIdMappingJpaEntity, UUID> {
 
-    public RSAKey rsaKeyFromX509Certificate(String encodedCert) throws JOSEException {
-
-        // Parse X.509 certificate
-        X509Certificate cert = X509CertUtils.parse(encodedCert);
-
-        // Retrieve public key as RSA JWK
-
-        return RSAKey.parse(cert);
-    }
+    Optional<OAuth2SubjectToUserIdMappingJpaEntity> findByOauth2JwtSubject(String oAuth2Subject);
 }

@@ -16,7 +16,7 @@ spring:
 
 user:
   authentication:
-    url: "http://localhost:8081/api/user/jwk"
+    url: "http://localhost:8081/api/user/authenticate"
 
 auth0:
   audience: my-admin-platform.com
