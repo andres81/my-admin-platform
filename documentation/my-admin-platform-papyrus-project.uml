@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_NHx5oEP3Ee6wRvKsjeL_JA" name="my-admin-platform-papyrus-project">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_NRIp8EP3Ee6wRvKsjeL_JA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Component" xmi:id="_on7osEQHEe6XaIs0pSdVFg" name="AWS Gateway">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Nwzs0ETZEe6BUZmfKXxFJQ" client="_on7osEQHEe6XaIs0pSdVFg" supplier="_HObk8ETZEe6BUZmfKXxFJQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_FaQuEETYEe6BUZmfKXxFJQ" name="Spring Cloud Gateway">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_HQCugETZEe6BUZmfKXxFJQ" client="_FaQuEETYEe6BUZmfKXxFJQ" supplier="_HObk8ETZEe6BUZmfKXxFJQ" contract="_HObk8ETZEe6BUZmfKXxFJQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_U4orIETZEe6BUZmfKXxFJQ" client="_FaQuEETYEe6BUZmfKXxFJQ" supplier="_RA3IUETZEe6BUZmfKXxFJQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_fDadEETZEe6BUZmfKXxFJQ" client="_FaQuEETYEe6BUZmfKXxFJQ" supplier="_bTOwAETZEe6BUZmfKXxFJQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_sFFjoETZEe6BUZmfKXxFJQ" client="_FaQuEETYEe6BUZmfKXxFJQ" supplier="_os-_YETZEe6BUZmfKXxFJQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_dIRbgETYEe6BUZmfKXxFJQ" name="Authentication server">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_RCT50ETZEe6BUZmfKXxFJQ" client="_dIRbgETYEe6BUZmfKXxFJQ" supplier="_RA3IUETZEe6BUZmfKXxFJQ" contract="_RA3IUETZEe6BUZmfKXxFJQ"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_kEX1gETZEe6BUZmfKXxFJQ" client="_dIRbgETYEe6BUZmfKXxFJQ" supplier="_kC8SIETZEe6BUZmfKXxFJQ" contract="_kC8SIETZEe6BUZmfKXxFJQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_g_7NEETZEe6BUZmfKXxFJQ" client="_dIRbgETYEe6BUZmfKXxFJQ" supplier="_bTOwAETZEe6BUZmfKXxFJQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_gxXpIETYEe6BUZmfKXxFJQ" name="Internal Network Authenticated Resource">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ouUcIETZEe6BUZmfKXxFJQ" client="_gxXpIETYEe6BUZmfKXxFJQ" supplier="_os-_YETZEe6BUZmfKXxFJQ" contract="_os-_YETZEe6BUZmfKXxFJQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_myqnwETZEe6BUZmfKXxFJQ" client="_gxXpIETYEe6BUZmfKXxFJQ" supplier="_kC8SIETZEe6BUZmfKXxFJQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_1ikKsETZEe6BUZmfKXxFJQ" client="_gxXpIETYEe6BUZmfKXxFJQ" supplier="_yeZ2IETZEe6BUZmfKXxFJQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_lxZ0gETYEe6BUZmfKXxFJQ" name="resource server">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yfs2oETZEe6BUZmfKXxFJQ" client="_lxZ0gETYEe6BUZmfKXxFJQ" supplier="_yeZ2IETZEe6BUZmfKXxFJQ" contract="_yeZ2IETZEe6BUZmfKXxFJQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_wH8KgETYEe6BUZmfKXxFJQ" name="OAuth2 / OIDC provider">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_bU6yEETZEe6BUZmfKXxFJQ" client="_wH8KgETYEe6BUZmfKXxFJQ" supplier="_bTOwAETZEe6BUZmfKXxFJQ" contract="_bTOwAETZEe6BUZmfKXxFJQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_HObk8ETZEe6BUZmfKXxFJQ" name="OpenAPI"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_RA3IUETZEe6BUZmfKXxFJQ" name="OpenAPI"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_bTOwAETZEe6BUZmfKXxFJQ" name="OpenAPI"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_kC8SIETZEe6BUZmfKXxFJQ" name="OpenAPI"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_os-_YETZEe6BUZmfKXxFJQ" name="OpenAPI"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yeZ2IETZEe6BUZmfKXxFJQ" name="OpenAPI"/>
+</uml:Model>

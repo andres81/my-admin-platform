@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+auth0:
+  audience: my-admin-platform.com
+
+
+app:
+  jwt:
+    issuer: 'map-auth-service'
+    jwkPrivateKeyPKCS1: "PKCS#1 private key, newlines replaced with '\n', see README.md"
+    jwkPublicKeyX509Cert: "Same as private key"
